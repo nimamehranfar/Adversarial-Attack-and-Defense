@@ -269,7 +269,7 @@ Dataset/
 ### Visual examples
 
 ![FGSM1 denoised images](/images/Figure%206.2.png)
-
+*FGSM1 images: Original (left), Adversarial (middle), and Spectrally Denoised with radius = 90 (right).*
 ---
 
 ## Main Takeaways
