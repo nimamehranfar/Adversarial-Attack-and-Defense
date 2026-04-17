@@ -80,25 +80,7 @@ This repository implements a complete experimental workflow:
 | Scheduler | StepLR(step=7, gamma=0.1) |
 | Total training time | ~1507 s (~25 min) |
 
----
 
-## Repository Structure
-
-| Path | Purpose |
-|---|---|
-| `FilterDataset.py` | Creates a balanced filtered dataset by copying up to 300 images per class. |
-| `InitialDetection.py` | Evaluates pretrained MobileNetV2 on the filtered dataset and reports per-class accuracy. |
-| `AttackOneClass.py` | Runs two FGSM attack variants on the top-performing class and saves clean/adversarial pairs. |
-| `FindFingerprints.py` | Computes average and median perturbation fingerprints from attacked samples. |
-| `RestoreOriginal.py` | Restores adversarial images by subtracting learned fingerprints and evaluates recovery. |
-| `FrequencySpectrumAnalysis.py` | Computes FFT-based average spectra for clean, adversarial, and perturbation images. |
-| `DenoisingHigherFrequencyNoises.py` | Applies low-pass filtering in frequency space and tests recovery vs. radius. |
-| `FineTune/CreateNoisyDataset.py` | Builds a mixed dataset containing clean, attacked, restored, and denoised images. |
-| `FineTune/TrainOnAllClasses.py` | Fine-tunes MobileNetV2 on the mixed multiclass dataset. |
-| `fine_tuned_model.pth` / `FineTune/mobilenet_finetuned_multiclass.pth` | Saved model weights. |
-| `Report_CASA_NimaMehranfar.pdf` | Project report with methodology, tables, and figure references. |
-
----
 
 ## Methodology
 
@@ -286,7 +268,7 @@ Dataset/
 
 ### Visual examples
 
-![FGSM1 denoised images](/images/Figure 6.2.png "FGSM1 denoised examples")
+![FGSM1 denoised images](/images/Figure%206.2.png)
 
 ---
 
